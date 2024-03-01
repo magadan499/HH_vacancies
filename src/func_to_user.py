@@ -1,8 +1,6 @@
 from src.working_with_vacancy import Vacancy
 from src.abstract_api_vacancy import VacancyJson
 from src.save_vacancy_json import SaveVacancy
-import os
-from config import ROOT_DIR
 
 
 def user_interaction():
@@ -20,7 +18,7 @@ def user_interaction():
     city_sort = Vacancy.sorted_city(salary_sort, city)
     Vacancy.transforms_vacancy(city_sort)
     if not Vacancy.list_of_vacancy:
-        print('\nПодходящих запросу вакансий, не найдено')
+        print('\nПодходящих вакансий не найдено')
     else:
-        print('\nСписок подходящих вакансий: ')
+        print('\nПодходящие вакансии: ')
         Vacancy.output_vacancy(Vacancy.list_of_vacancy)
